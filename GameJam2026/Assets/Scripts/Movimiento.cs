@@ -1,21 +1,31 @@
+using System.Collections;
+using UnityEditor.SceneManagement;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.UI;
 
 public class Movimiento : MonoBehaviour
 {
     Vector3 movement;
-    [SerializeField] float speed = 2;
+    [SerializeField] float speed = 10;
+    [SerializeField]float jumpForce = 10;
+    [SerializeField]float maxHealth = 100;
     bool isMoving = false;
 
     bool isJumping = false;
-    float jumpForce = 10;
     float jumpHolding = 0;
     float maxJumpHolding = 5;
     Rigidbody2D rb;
+
+    [SerializeField] Image healthbar;
+
+    float health;
+    bool lifeIsDecreasing = false;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        health = maxHealth;
     }
     public void OnMove(InputAction.CallbackContext contextMovement)
     {
@@ -64,6 +74,38 @@ public class Movimiento : MonoBehaviour
             Debug.Log("Entre en salto");
 
         }
+        if (!lifeIsDecreasing)
+        {
+            StartCoroutine(DecreaseLife());
+        }
+        //CheatCode for recover health
+        if (Input.GetKeyDown(KeyCode.B))
+        {
+            health = maxHealth;
+            healthbar.fillAmount = health / maxHealth;
+        }
     }
+    internal void RecoverHealth()
+    {
+        health = maxHealth;
+        healthbar.fillAmount = health/maxHealth; 
+    }
+    IEnumerator DecreaseLife()
+    {
+        lifeIsDecreasing = true;
+        health -= 2;
+        healthbar.fillAmount = health / maxHealth;
+        yield return new WaitForSeconds(0.5f);
+        lifeIsDecreasing = false;
+    }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.TryGetComponent<Water>(out Water recover))
+        {
+            Debug.Log("Detecte agua");
+            RecoverHealth();
+            recover.Deactivate();
+        }
 
+    }
 }
