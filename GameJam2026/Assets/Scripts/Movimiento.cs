@@ -112,7 +112,7 @@ public class Movimiento : MonoBehaviour
         }
         if (collision.gameObject.tag== "Matarjugador")
         {
-            Debug.Log(" aqui muere el jugador");
+            Debug.Log(" aqui muere el jugador"); //AQUI SE ENLAZARÍA A LA ANIMACIÓN Y PENDIENTE DE ESPECIFICAR LA MUERTE DEL JUGADOR CON CADA TRIGGER
         }
     }
 }
