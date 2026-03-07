@@ -4,7 +4,11 @@
 TagManager:
   serializedVersion: 3
   tags:
+<<<<<<< HEAD
   - end
+=======
+  - Matarjugador
+>>>>>>> aeea589dd8b1ba82f4756301ea6da6d486bd45fa
   layers:
   - Default
   - TransparentFX
