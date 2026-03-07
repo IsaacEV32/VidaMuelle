@@ -4542,11 +4542,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 646035371750546488, guid: c10a3fb061fd6c2408b2cfd0e7f43e57, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 37.83
+      value: 38.58
       objectReference: {fileID: 0}
     - target: {fileID: 646035371750546488, guid: c10a3fb061fd6c2408b2cfd0e7f43e57, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 4.09
+      value: 3.3
       objectReference: {fileID: 0}
     - target: {fileID: 646035371750546488, guid: c10a3fb061fd6c2408b2cfd0e7f43e57, type: 3}
       propertyPath: m_LocalPosition.z
@@ -7338,7 +7338,7 @@ Rigidbody2D:
     m_Bits: 0
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 4
 --- !u!61 &495451265
 BoxCollider2D:
@@ -7401,6 +7401,9 @@ MonoBehaviour:
   speed: 2
   jumpForce: 10
   maxHealth: 100
+  layerRay:
+    serializedVersion: 2
+    m_Bits: 8
   healthbar: {fileID: 584705544}
 --- !u!114 &495451267
 MonoBehaviour:
@@ -21293,6 +21296,7 @@ GameObject:
   - component: {fileID: 1457757894}
   - component: {fileID: 1457757893}
   - component: {fileID: 1457757892}
+  - component: {fileID: 1457757895}
   m_Layer: 0
   m_Name: CUBO DE AGUA
   m_TagString: Untagged
@@ -21330,7 +21334,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
@@ -21410,7 +21414,7 @@ Transform:
   m_GameObject: {fileID: 1457757891}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 39.27, y: 1.86, z: 0}
+  m_LocalPosition: {x: 39.13, y: 2.01, z: 0}
   m_LocalScale: {x: 0.5929691, y: 0.625, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -21419,6 +21423,18 @@ Transform:
   - {fileID: 1289510938}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1457757895
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1457757891}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4a56101461202f41b6a2c7a519f0315, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1458200557
 GameObject:
   m_ObjectHideFlags: 0
@@ -23862,7 +23878,7 @@ GameObject:
   - component: {fileID: 1646726315}
   m_Layer: 2
   m_Name: cuadro invisble, trigger
-  m_TagString: Untagged
+  m_TagString: Matarjugador
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -23897,7 +23913,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
@@ -23977,8 +23993,8 @@ Transform:
   m_GameObject: {fileID: 1646726311}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 177.6359, y: -3.4406, z: 0}
-  m_LocalScale: {x: 364.8891, y: 3.239105, z: 1}
+  m_LocalPosition: {x: 177.6359, y: -3.6878, z: 0}
+  m_LocalScale: {x: 364.8891, y: 2.7448175, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}

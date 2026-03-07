@@ -11,7 +11,7 @@ public class Movimiento : MonoBehaviour
     [SerializeField]float jumpForce = 10;
     [SerializeField]float maxHealth = 100;
     bool isMoving = false;
-
+    public LayerMask layerRay;
     bool isJumping = false;
     float jumpHolding = 0;
     float maxJumpHolding = 5;
@@ -49,11 +49,11 @@ public class Movimiento : MonoBehaviour
         }
         else if (contextJump.canceled)
         {
-            if (Time.time - jumpHolding < maxJumpHolding)
-            {
+           
+            
                 isJumping = false;
                 rb.linearVelocity = Vector2.zero;
-            }
+            
         }
     }
     // Update is called once per frame
@@ -66,13 +66,17 @@ public class Movimiento : MonoBehaviour
         }
         if (isJumping)
         {
-            RaycastHit2D p = Physics2D.Raycast(this.transform.position, Vector2.down, 0.6f, 1 << 3);
-            if (p.distance >= 0.1f)
+            ////if (Time.time - jumpHolding < maxJumpHolding)
+            //{
+            //    isJumping = false;
+            //    rb.linearVelocity = Vector2.zero;
+            //}
+            RaycastHit2D p = Physics2D.Raycast(this.transform.position, Vector2.down, 0.6f, layerRay);
+            if (p.collider != null && p.distance <= 0.2f)
             {
                 rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpForce);
+                Debug.Log(p.distance);
             }
-            Debug.Log("Entre en salto");
-
         }
         if (!lifeIsDecreasing)
         {
@@ -106,6 +110,9 @@ public class Movimiento : MonoBehaviour
             RecoverHealth();
             recover.Deactivate();
         }
-
+        if (collision.gameObject.tag== "Matarjugador")
+        {
+            Debug.Log(" aqui muere el jugador");
+        }
     }
 }
