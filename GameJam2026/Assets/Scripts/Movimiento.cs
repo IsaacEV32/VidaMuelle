@@ -5,19 +5,16 @@ public class Movimiento : MonoBehaviour
 {
     Vector3 movement;
     [SerializeField] float speed = 2;
-    CharacterController characterController;
     bool isMoving = false;
 
     bool isJumping = false;
     float jumpForce = 10;
-    float jumpLimit = 2;
-
-    float jump = 0;
+    float jumpHolding = 0;
+    float maxJumpHolding = 5;
     Rigidbody2D rb;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        characterController = GetComponent<CharacterController>();
         rb = GetComponent<Rigidbody2D>();
     }
     public void OnMove(InputAction.CallbackContext contextMovement)
@@ -37,10 +34,16 @@ public class Movimiento : MonoBehaviour
         if (contextJump.performed)
         {
             isJumping = true;
+            jumpHolding = Time.time;
+
         }
         else if (contextJump.canceled)
         {
-            isJumping = false;
+            if (Time.time - jumpHolding < maxJumpHolding)
+            {
+                isJumping = false;
+                rb.linearVelocity = Vector2.zero;
+            }
         }
     }
     // Update is called once per frame
