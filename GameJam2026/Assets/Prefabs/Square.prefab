@@ -148,6 +148,10 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: 72a389d1-01bc-449c-a502-402123ee2f29
     m_ActionName: 'Keyboard/Jump[/Keyboard/space]'
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 1750eee3-c886-4a5c-a56c-8253fda03ff4
+    m_ActionName: 'Keyboard/PelicanControl[/Keyboard/w,/Keyboard/s]'
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Keyboard
@@ -166,6 +170,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 2
+  jumpForce: 10
+  maxHealth: 100
+  healthbar: {fileID: 0}
 --- !u!61 &8582485033593635187
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -238,4 +245,4 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4

@@ -27,6 +27,10 @@ public class Movimiento : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         health = maxHealth;
     }
+    internal Rigidbody2D GetRigidBody()
+    {
+        return rb;
+    }
     public void OnMove(InputAction.CallbackContext contextMovement)
     {
         if (contextMovement.performed)
@@ -110,7 +114,12 @@ public class Movimiento : MonoBehaviour
             RecoverHealth();
             recover.Deactivate();
         }
-        if (collision.gameObject.tag== "Matarjugador")
+        else if (collision.TryGetComponent<TriggerForPelican>(out TriggerForPelican pelican))
+        {
+            pelican.enabled = true;
+            pelican.PelicanSet(this);
+        }
+        if (collision.gameObject.tag == "Matarjugador")
         {
             Debug.Log(" aqui muere el jugador"); //AQUI SE ENLAZARÍA A LA ANIMACIÓN Y PENDIENTE DE ESPECIFICAR LA MUERTE DEL JUGADOR CON CADA TRIGGER
         }
