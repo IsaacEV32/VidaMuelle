@@ -119,6 +119,11 @@ public class Movimiento : MonoBehaviour
             pelican.enabled = true;
             pelican.PelicanSet(this);
         }
+        else if (collision.TryGetComponent<Liana>(out Liana liana))
+        {
+            liana.enabled = true;
+            liana.SetPlayer(this);
+        }
         if (collision.gameObject.tag == "Matarjugador")
         {
             Debug.Log(" aqui muere el jugador"); //AQUI SE ENLAZARÍA A LA ANIMACIÓN Y PENDIENTE DE ESPECIFICAR LA MUERTE DEL JUGADOR CON CADA TRIGGER
