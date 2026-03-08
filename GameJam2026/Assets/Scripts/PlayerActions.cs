@@ -118,6 +118,15 @@ public partial class @PlayerActions: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""LianaControl"",
+                    ""type"": ""Button"",
+                    ""id"": ""15762c50-896c-4146-99c8-677a57f66cc9"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -197,6 +206,17 @@ public partial class @PlayerActions: IInputActionCollection2, IDisposable
                     ""action"": ""PelicanControl"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""aecc710b-389f-436e-b215-0995da821ca9"",
+                    ""path"": ""<Keyboard>/space"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""LianaControl"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -208,6 +228,7 @@ public partial class @PlayerActions: IInputActionCollection2, IDisposable
         m_Keyboard_Movimiento = m_Keyboard.FindAction("Movimiento", throwIfNotFound: true);
         m_Keyboard_Jump = m_Keyboard.FindAction("Jump", throwIfNotFound: true);
         m_Keyboard_PelicanControl = m_Keyboard.FindAction("PelicanControl", throwIfNotFound: true);
+        m_Keyboard_LianaControl = m_Keyboard.FindAction("LianaControl", throwIfNotFound: true);
     }
 
     ~@PlayerActions()
@@ -291,6 +312,7 @@ public partial class @PlayerActions: IInputActionCollection2, IDisposable
     private readonly InputAction m_Keyboard_Movimiento;
     private readonly InputAction m_Keyboard_Jump;
     private readonly InputAction m_Keyboard_PelicanControl;
+    private readonly InputAction m_Keyboard_LianaControl;
     /// <summary>
     /// Provides access to input actions defined in input action map "Keyboard".
     /// </summary>
@@ -314,6 +336,10 @@ public partial class @PlayerActions: IInputActionCollection2, IDisposable
         /// Provides access to the underlying input action "Keyboard/PelicanControl".
         /// </summary>
         public InputAction @PelicanControl => m_Wrapper.m_Keyboard_PelicanControl;
+        /// <summary>
+        /// Provides access to the underlying input action "Keyboard/LianaControl".
+        /// </summary>
+        public InputAction @LianaControl => m_Wrapper.m_Keyboard_LianaControl;
         /// <summary>
         /// Provides access to the underlying input action map instance.
         /// </summary>
@@ -349,6 +375,9 @@ public partial class @PlayerActions: IInputActionCollection2, IDisposable
             @PelicanControl.started += instance.OnPelicanControl;
             @PelicanControl.performed += instance.OnPelicanControl;
             @PelicanControl.canceled += instance.OnPelicanControl;
+            @LianaControl.started += instance.OnLianaControl;
+            @LianaControl.performed += instance.OnLianaControl;
+            @LianaControl.canceled += instance.OnLianaControl;
         }
 
         /// <summary>
@@ -369,6 +398,9 @@ public partial class @PlayerActions: IInputActionCollection2, IDisposable
             @PelicanControl.started -= instance.OnPelicanControl;
             @PelicanControl.performed -= instance.OnPelicanControl;
             @PelicanControl.canceled -= instance.OnPelicanControl;
+            @LianaControl.started -= instance.OnLianaControl;
+            @LianaControl.performed -= instance.OnLianaControl;
+            @LianaControl.canceled -= instance.OnLianaControl;
         }
 
         /// <summary>
@@ -430,5 +462,12 @@ public partial class @PlayerActions: IInputActionCollection2, IDisposable
         /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
         /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
         void OnPelicanControl(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "LianaControl" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnLianaControl(InputAction.CallbackContext context);
     }
 }

@@ -129,8 +129,12 @@ GameObject:
   m_Component:
   - component: {fileID: 45139726}
   - component: {fileID: 45139728}
+  - component: {fileID: 45139730}
+  - component: {fileID: 45139729}
+  - component: {fileID: 45139731}
+  - component: {fileID: 45139732}
   m_Layer: 0
-  m_Name: Square (2)
+  m_Name: Liana
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -145,8 +149,8 @@ Transform:
   m_GameObject: {fileID: 45139725}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: 0.0022832605, w: 0.99999744}
-  m_LocalPosition: {x: 0.0099983215, y: -2.9100003, z: 0.08625245}
-  m_LocalScale: {x: 1, y: 6.2986674, z: 1}
+  m_LocalPosition: {x: 0.090000376, y: -2.5299997, z: 0.08625245}
+  m_LocalScale: {x: 1, y: 6.298666, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 390346411}
@@ -206,6 +210,153 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!50 &45139729
+Rigidbody2D:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 45139725}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDamping: 0
+  m_AngularDamping: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
+--- !u!61 &45139730
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 45139725}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 1}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Size: {x: 1, y: 1}
+  m_EdgeRadius: 0
+--- !u!114 &45139731
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 45139725}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Actions: {fileID: -944628639613478452, guid: b658661f32b200448bb0afbc13acf33c, type: 3}
+  m_NotificationBehavior: 2
+  m_UIInputModule: {fileID: 0}
+  m_DeviceLostEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_DeviceRegainedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ControlsChangedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ActionEvents:
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 7049dd07-f83d-4fac-9e84-022adb054467
+    m_ActionName: 'Keyboard/Movimiento[/Keyboard/a,/Keyboard/d]'
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 72a389d1-01bc-449c-a502-402123ee2f29
+    m_ActionName: 'Keyboard/Jump[/Keyboard/space]'
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 1750eee3-c886-4a5c-a56c-8253fda03ff4
+    m_ActionName: 'Keyboard/PelicanControl[/Keyboard/w,/Keyboard/s]'
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 45139732}
+        m_TargetAssemblyTypeName: Liana, Assembly-CSharp
+        m_MethodName: OnLiana
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 15762c50-896c-4146-99c8-677a57f66cc9
+    m_ActionName: 'Keyboard/LianaControl[/Keyboard/space]'
+  m_NeverAutoSwitchControlSchemes: 0
+  m_DefaultControlScheme: 
+  m_DefaultActionMap: Keyboard
+  m_SplitScreenIndex: -1
+  m_Camera: {fileID: 0}
+--- !u!114 &45139732
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 45139725}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92f678d97bfc53945b46f7810dd96784, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  liana: {fileID: 390346411}
+  player: {fileID: 0}
+  maxRotationDuration: 3
+  forceImpulse: 4
 --- !u!1 &390346410
 GameObject:
   m_ObjectHideFlags: 0
@@ -215,7 +366,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 390346411}
-  - component: {fileID: 390346412}
   m_Layer: 0
   m_Name: Pivot
   m_TagString: Untagged
@@ -232,26 +382,13 @@ Transform:
   m_GameObject: {fileID: 390346410}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0.000000044703484, w: 1}
-  m_LocalPosition: {x: 46.25, y: 8.22, z: -0.08625245}
+  m_LocalPosition: {x: 47.84, y: 4.49, z: -0.08625245}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 45139726}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &390346412
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 390346410}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 92f678d97bfc53945b46f7810dd96784, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  liana: {fileID: 390346411}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -905,11 +1042,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4002747170054713099, guid: 320a69966efeb2a478dcc9bc84367072, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 11.38
+      value: 42.54
       objectReference: {fileID: 0}
     - target: {fileID: 4002747170054713099, guid: 320a69966efeb2a478dcc9bc84367072, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.79
+      value: -1.09
       objectReference: {fileID: 0}
     - target: {fileID: 4002747170054713099, guid: 320a69966efeb2a478dcc9bc84367072, type: 3}
       propertyPath: m_LocalPosition.z
@@ -959,6 +1096,10 @@ PrefabInstance:
     - target: {fileID: 2179655110798442513, guid: de050fdce06658544a65beb864c9ec97, type: 3}
       propertyPath: m_Name
       value: PelicanGroup
+      objectReference: {fileID: 0}
+    - target: {fileID: 5017593327869920521, guid: de050fdce06658544a65beb864c9ec97, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 14.52
       objectReference: {fileID: 0}
     - target: {fileID: 8660753847104088408, guid: de050fdce06658544a65beb864c9ec97, type: 3}
       propertyPath: m_LocalPosition.x
