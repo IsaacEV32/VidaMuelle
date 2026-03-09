@@ -3625,57 +3625,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1 &171267689 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1098971014526836342, guid: d3e9ac75b936cf04ca3fb9a820c4e101, type: 3}
-  m_PrefabInstance: {fileID: 5885420589394971272}
-  m_PrefabAsset: {fileID: 0}
---- !u!61 &171267692
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 171267689}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_CompositeOperation: 0
-  m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
-    newSize: {x: 1, y: 1}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  m_Size: {x: 1, y: 1}
-  m_EdgeRadius: 0
 --- !u!1 &180897619
 GameObject:
   m_ObjectHideFlags: 0
@@ -31598,6 +31547,10 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Matarjugador
       objectReference: {fileID: 0}
+    - target: {fileID: 8927840956478268508, guid: d3e9ac75b936cf04ca3fb9a820c4e101, type: 3}
+      propertyPath: m_BodyType
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8930439879745504917, guid: d3e9ac75b936cf04ca3fb9a820c4e101, type: 3}
       propertyPath: m_LocalPosition.x
       value: 97.64067
@@ -31612,9 +31565,6 @@ PrefabInstance:
     - {fileID: 9097620644710801600, guid: d3e9ac75b936cf04ca3fb9a820c4e101, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 1098971014526836342, guid: d3e9ac75b936cf04ca3fb9a820c4e101, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 171267692}
     - targetCorrespondingSourceObject: {fileID: 4259166691404598286, guid: d3e9ac75b936cf04ca3fb9a820c4e101, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2099130509}
