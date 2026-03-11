@@ -6,9 +6,13 @@ public class TriggerForPelican : MonoBehaviour
     //Accede al transform del pelicano
     [SerializeField] Transform pelican;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
+
+   
+
+
     void Start()
     {
-        
+
     }
     public void PelicanSet(Movimiento player)
     {
@@ -28,6 +32,14 @@ public class TriggerForPelican : MonoBehaviour
         p.enabled = true;
 
     }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "Matarjugador")
+        {
+            Debug.Log("aqui muere el jugador"); //falta el teletransporte del jugador al menu de muerte
+        }
+    }
+
     public void PlayerSet(Movimiento player)
     {
         //Recibe el parametro del jugador
@@ -43,6 +55,6 @@ public class TriggerForPelican : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 }

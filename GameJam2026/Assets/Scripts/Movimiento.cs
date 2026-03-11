@@ -59,28 +59,7 @@ public class Movimiento : MonoBehaviour
             //Se deshabilita el movimiento cuando se cancela el input
             isMoving = false;
         }
-    }
-    ///77777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777
-    //cuando el pez toca el acido por ahora se queda sobre el
-    public void muerteinstantanea()
-    {
-        Vector3 posDeAci = transform.position;
-        posDeAci.y = Mathf.Clamp(posDeAci.y, -2.5f, 6f);
-        transform.position = posDeAci;
-        if (isMoving)
-        {
-            //Se movera dependiendo del input dado
-            posDeAci += movement * Time.deltaTime;
-            posDeAci += Vector3.right * Time.deltaTime;
-        }
-        else
-        {
-            posDeAci += Vector3.right * Time.deltaTime;
-        }
-    }
-    ////77777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777
-
-    //Sirve para llamar al Player Input en el jugador y acceder al salto del jugador
+    }//Sirve para llamar al Player Input en el jugador y acceder al salto del jugador
     public void OnJump(InputAction.CallbackContext contextJump)
     {
         //Si se ha llamado a la accion
@@ -108,11 +87,7 @@ public class Movimiento : MonoBehaviour
         if (isMoving)
         {
             Vector3 nuevaPos = transform.position + movement * speed * Time.deltaTime;
-            nuevaPos.y = Mathf.Clamp(nuevaPos.y, -2f, 5f);
-            transform.position = nuevaPos;
-            Debug.LogError("posicion" + transform.position + " nombre " + transform.gameObject.name);
-            //Se mueve a una velocidad cada frame
-            //transform.position += movement * speed * Time.deltaTime;
+            transform.position = nuevaPos;//Se mueve a una velocidad cada frame
         }
         //Se comprueba si se puede saltar
         if (isJumping)
@@ -145,7 +120,7 @@ public class Movimiento : MonoBehaviour
         }
     }
     //Permite recuperar la salud del jugador
-    internal void RecoverHealth()
+    public void RecoverHealth()
     {
         health = maxHealth;
         healthbar.fillAmount = health / maxHealth;
@@ -182,7 +157,13 @@ public class Movimiento : MonoBehaviour
         }
         if (collision.gameObject.tag == "Matarjugador")
         {
+            health = 0;
             Debug.Log(" aqui muere el jugador"); //AQUI SE ENLAZARÍA A LA ANIMACIÓN Y PENDIENTE DE ESPECIFICAR LA MUERTE DEL JUGADOR CON CADA TRIGGER
+        }
+        if (collision.gameObject.tag == "Reducirvida")
+        {
+            health =health - 10;
+            Debug.Log("los pajaros dañan al jugador"); //Aquí recibe 10 de daño por cada pajaro que le golpea
         }
     }
 }

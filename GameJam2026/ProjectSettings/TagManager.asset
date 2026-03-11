@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Matarjugador
   - pelican
+  - Reducirvida
   layers:
   - Default
   - TransparentFX

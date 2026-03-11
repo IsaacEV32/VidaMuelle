@@ -3470,7 +3470,7 @@ GameObject:
   - component: {fileID: 118889874}
   m_Layer: 0
   m_Name: PAJARO
-  m_TagString: Untagged
+  m_TagString: Matarjugador
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -35310,7 +35310,7 @@ GameObject:
   - component: {fileID: 1841013481}
   m_Layer: 0
   m_Name: PAJARO
-  m_TagString: Untagged
+  m_TagString: Matarjugador
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -40662,11 +40662,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7145921162379854077, guid: 77202161db793ad41a68e7383cb2545b, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 246.81
+      value: 37.1
       objectReference: {fileID: 0}
     - target: {fileID: 7145921162379854077, guid: 77202161db793ad41a68e7383cb2545b, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.37
+      value: 2.4
       objectReference: {fileID: 0}
     - target: {fileID: 7145921162379854077, guid: 77202161db793ad41a68e7383cb2545b, type: 3}
       propertyPath: m_LocalPosition.z
@@ -40724,6 +40724,14 @@ PrefabInstance:
     - target: {fileID: 1331685758533455274, guid: b49ae9b8102461d4a99ff54f2bfabdcc, type: 3}
       propertyPath: m_Name
       value: PAJARO
+      objectReference: {fileID: 0}
+    - target: {fileID: 1331685758533455274, guid: b49ae9b8102461d4a99ff54f2bfabdcc, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1331685758533455274, guid: b49ae9b8102461d4a99ff54f2bfabdcc, type: 3}
+      propertyPath: m_TagString
+      value: Matarjugador
       objectReference: {fileID: 0}
     - target: {fileID: 1890384787161818951, guid: b49ae9b8102461d4a99ff54f2bfabdcc, type: 3}
       propertyPath: m_LocalPosition.x
