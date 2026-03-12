@@ -32,16 +32,23 @@ public class PelicanControl : MonoBehaviour
     void Update()
     {
         //Se activa  el movimiento y se mueve hacia delante automáticamente siempre con el pelicano
+        Vector3 nuevaPos = transform.position;
+
         if (isMoving)
         {
             //Se movera dependiendo del input dado
-            this.transform.position += movement * speed * Time.deltaTime;
-            this.transform.position += Vector3.right * speed * Time.deltaTime;
+            nuevaPos += movement * speed * Time.deltaTime;
+            nuevaPos += Vector3.right * speed * Time.deltaTime;
         }
-        else 
+        else
         {
-            this.transform.position += Vector3.right * speed * Time.deltaTime;
+            nuevaPos += Vector3.right * speed * Time.deltaTime;
         }
+
+
+        nuevaPos.y = Mathf.Clamp(nuevaPos.y, -1.1f, 6f);
+
+        transform.position = nuevaPos;
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
