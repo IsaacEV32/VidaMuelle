@@ -40948,6 +40948,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PEZ
       objectReference: {fileID: 0}
+    - target: {fileID: 1828010408260325612, guid: 77202161db793ad41a68e7383cb2545b, type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
     - target: {fileID: 2144433867698419806, guid: 77202161db793ad41a68e7383cb2545b, type: 3}
       propertyPath: m_SortingOrder
       value: 3
@@ -41006,11 +41010,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7145921162379854077, guid: 77202161db793ad41a68e7383cb2545b, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 37.1
+      value: 264.9
       objectReference: {fileID: 0}
     - target: {fileID: 7145921162379854077, guid: 77202161db793ad41a68e7383cb2545b, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.4
+      value: 0.8
       objectReference: {fileID: 0}
     - target: {fileID: 7145921162379854077, guid: 77202161db793ad41a68e7383cb2545b, type: 3}
       propertyPath: m_LocalPosition.z
