@@ -3,6 +3,7 @@ using UnityEditor.SceneManagement;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class Movimiento : MonoBehaviour
 {
@@ -133,6 +134,10 @@ public class Movimiento : MonoBehaviour
         healthbar.fillAmount = health / maxHealth;
         yield return new WaitForSeconds(0.5f);
         lifeIsDecreasing = false;
+        if (health <= 0)
+        {
+            SceneManager.LoadScene(3);
+        }
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -159,11 +164,12 @@ public class Movimiento : MonoBehaviour
         {
             health = 0;
             Debug.Log(" aqui muere el jugador"); //AQUI SE ENLAZARÍA A LA ANIMACIÓN Y PENDIENTE DE ESPECIFICAR LA MUERTE DEL JUGADOR CON CADA TRIGGER
+            SceneManager.LoadScene(3);
         }
-        if (collision.gameObject.tag == "Reducirvida")
+        if (collision.gameObject.tag == "Victoria")
         {
-            health =health - 10;
-            Debug.Log("los pajaros dañan al jugador"); //Aquí recibe 10 de daño por cada pajaro que le golpea
+            Debug.Log("Has ganado"); //Aquí el jugador toca el trigger que le da la victoria
+            SceneManager.LoadScene(2);
         }
     }
 }

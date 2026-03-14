@@ -46,7 +46,7 @@ public class PelicanControl : MonoBehaviour
         }
 
 
-        nuevaPos.y = Mathf.Clamp(nuevaPos.y, -1.1f, 6f);
+        nuevaPos.y = Mathf.Clamp(nuevaPos.y, -1.1f, 6f);//Aquí se limita el vuelo del pelicano para que no se escape, por arriba no es necesario ajustar nada, pero cuando introduzcais la animación del agua, si lo veis necesario, cambiad el valor del componente de la izquierda con ensayo y error hasta que el pelicano no toque el agua, no se puede programar la muerte del pez con el pelicano en el acido porque si se delimita por arriba, también por abajo.
 
         transform.position = nuevaPos;
     }
